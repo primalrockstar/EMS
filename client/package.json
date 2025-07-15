@@ -14,9 +14,15 @@
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.56.0",
+<<<<<<< HEAD
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.3.3",
     "vite": "^5.4.0"
+=======
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.19"
+>>>>>>> ef64e013b250cdd83f10ffc5ef290059ee9bf6f0
   }
 }
