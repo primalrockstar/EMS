@@ -1,0 +1,33 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ambulance silhouette -->
+  <path d="M50 150 L50 130 L70 130 L70 120 L80 120 L80 110 L100 110 L100 100 L120 100 L120 90 L140 90 L140 80 L200 80 L200 90 L220 90 L220 100 L240 100 L240 110 L260 110 L260 120 L280 120 L280 130 L300 130 L300 140 L320 140 L320 150 L340 150 L340 160 L320 160 L320 170 L300 170 L300 160 L280 160 L280 170 L260 170 L260 160 L240 160 L240 170 L220 170 L220 160 L200 160 L200 170 L180 170 L180 160 L160 160 L160 170 L140 170 L140 160 L120 160 L120 170 L100 170 L100 160 L80 160 L80 170 L70 170 L70 160 L50 160 Z" 
+        fill="currentColor" 
+        opacity="0.1"/>
+  
+  <!-- Emergency lights on top -->
+  <rect x="140" y="75" width="8" height="5" fill="currentColor" opacity="0.08"/>
+  <rect x="160" y="75" width="8" height="5" fill="currentColor" opacity="0.08"/>
+  <rect x="180" y="75" width="8" height="5" fill="currentColor" opacity="0.08"/>
+  <rect x="200" y="75" width="8" height="5" fill="currentColor" opacity="0.08"/>
+  
+  <!-- Windows -->
+  <rect x="120" y="100" width="15" height="20" fill="currentColor" opacity="0.06"/>
+  <rect x="145" y="100" width="15" height="20" fill="currentColor" opacity="0.06"/>
+  <rect x="170" y="100" width="15" height="20" fill="currentColor" opacity="0.06"/>
+  
+  <!-- Side windows -->
+  <rect x="260" y="110" width="12" height="15" fill="currentColor" opacity="0.06"/>
+  <rect x="275" y="110" width="12" height="15" fill="currentColor" opacity="0.06"/>
+  <rect x="290" y="110" width="12" height="15" fill="currentColor" opacity="0.06"/>
+  
+  <!-- Wheels -->
+  <circle cx="100" cy="165" r="8" fill="currentColor" opacity="0.12"/>
+  <circle cx="280" cy="165" r="8" fill="currentColor" opacity="0.12"/>
+  
+  <!-- Star of life symbol -->
+  <g transform="translate(200,125) scale(0.8)">
+    <path d="M0,-10 L3,-3 L10,-3 L5,2 L7,9 L0,5 L-7,9 L-5,2 L-10,-3 L-3,-3 Z" 
+          fill="currentColor" 
+          opacity="0.08"/>
+  </g>
+</svg>

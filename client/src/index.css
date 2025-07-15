@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+:root {
+  /* ProMedix EMS Theme - Professional Medical Emergency Services */
+  --background: hsl(210, 25%, 98%);
+  --foreground: hsl(210, 20%, 15%);
+  --muted: hsl(210, 15%, 95%);
+  --muted-foreground: hsl(210, 10%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 20%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 20%, 15%);
+  --border: hsl(210, 15%, 88%);
+  --input: hsl(210, 15%, 92%);
+  
+  /* ProMedix EMS Brand Colors - Based on Official Logo */
+  --primary: hsl(221, 83%, 53%); /* ProMedix Blue - Professional medical blue from logo */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 84%, 60%); /* ProMedix Red - Emergency red from medical star */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 90%, 50%); /* Caution Yellow - Warnings, attention */
+  --accent-foreground: hsl(0, 0%, 0%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(221, 83%, 53%);
+  --radius: 0.75rem;
+  
+  /* ProMedix EMS Brand Color Palette */
+  --ems-primary: hsl(221, 83%, 53%); /* ProMedix Blue - Main brand color */
+  --ems-secondary: hsl(0, 84%, 60%); /* ProMedix Red - Emergency actions */
+  --ems-accent: hsl(45, 90%, 50%); /* Caution Yellow - Warnings */
+  --ems-success: hsl(142, 76%, 36%); /* Success Green - Positive outcomes */
+  --ems-warning: hsl(38, 92%, 50%); /* Warning Orange - Attention needed */
+  --ems-info: hsl(221, 83%, 53%); /* Info Blue - Information display */
+  --ems-neutral: hsl(210, 10%, 45%); /* Neutral Gray - Secondary text */
+  --ems-medical-star: hsl(0, 84%, 60%); /* Medical Star Red - Emergency symbol */
+  --ems-caduceus: hsl(221, 83%, 53%); /* Caduceus Blue - Medical symbol */
+  --ems-ekg: hsl(0, 84%, 60%); /* EKG Red - Heartbeat line */
+}
+
+.dark {
+  /* ProMedix EMS Dark Theme - Night Shift Ready */
+  --background: hsl(210, 25%, 8%);
+  --foreground: hsl(210, 15%, 92%);
+  --muted: hsl(210, 20%, 12%);
+  --muted-foreground: hsl(210, 10%, 65%);
+  --popover: hsl(210, 25%, 10%);
+  --popover-foreground: hsl(210, 15%, 92%);
+  --card: hsl(210, 25%, 10%);
+  --card-foreground: hsl(210, 15%, 92%);
+  --border: hsl(210, 20%, 18%);
+  --input: hsl(210, 20%, 15%);
+  
+  /* ProMedix EMS Brand Colors - Dark Mode */
+  --primary: hsl(221, 83%, 68%); /* Brighter ProMedix blue for dark mode */
+  --primary-foreground: hsl(210, 25%, 8%);
+  --secondary: hsl(0, 84%, 70%); /* Brighter ProMedix red */
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 90%, 60%); /* Brighter caution yellow */
+  --accent-foreground: hsl(0, 0%, 0%);
+  --destructive: hsl(0, 84%, 70%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(221, 83%, 68%);
+  --radius: 0.75rem;
+  
+  /* ProMedix EMS Brand Color Palette - Dark Mode */
+  --ems-primary: hsl(221, 83%, 68%); /* ProMedix Blue - Brighter for dark mode */
+  --ems-secondary: hsl(0, 84%, 70%); /* ProMedix Red - Brighter for dark mode */
+  --ems-accent: hsl(45, 90%, 60%); /* Caution Yellow - Brighter */
+  --ems-success: hsl(142, 76%, 46%); /* Success Green - Adjusted */
+  --ems-warning: hsl(38, 92%, 60%); /* Warning Orange - Brighter */
+  --ems-info: hsl(221, 83%, 68%); /* Info Blue - Brighter */
+  --ems-neutral: hsl(210, 10%, 65%); /* Neutral Gray - Brighter */
+  --ems-medical-star: hsl(0, 84%, 70%); /* Medical Star Red - Brighter */
+  --ems-caduceus: hsl(221, 83%, 68%); /* Caduceus Blue - Brighter */
+  --ems-ekg: hsl(0, 84%, 70%); /* EKG Red - Brighter */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* ProMedix EMS Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+  }
+  
+  /* Medical Data Display */
+  .medical-data {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+}
+
+/* ProMedix EMS Theme Customizations */
+@layer components {
+  /* ProMedix EMS Button Styles */
+  .btn-ems-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90 min-h-[48px] min-w-[48px] text-base font-medium shadow-sm transition-all duration-200;
+  }
+  
+  .btn-ems-emergency {
+    @apply bg-secondary text-secondary-foreground hover:opacity-90 min-h-[48px] min-w-[48px] text-base font-semibold shadow-md transition-all duration-200;
+  }
+  
+  .btn-ems-caution {
+    @apply bg-accent text-accent-foreground hover:opacity-90 min-h-[48px] min-w-[48px] text-base font-medium shadow-sm transition-all duration-200;
+  }
+  
+  .btn-ems-success {
+    @apply bg-green-600 text-white hover:bg-green-700 min-h-[48px] min-w-[48px] text-base font-medium shadow-sm transition-all duration-200;
+  }
+  
+  /* ProMedix EMS Badge Styles */
+  .badge-promedix {
+    @apply bg-primary text-white hover:opacity-90 font-semibold;
+  }
+  
+  .badge-ems {
+    @apply bg-secondary text-white hover:opacity-90 font-semibold;
+  }
+  
+  .badge-medical-star {
+    @apply bg-secondary text-white hover:opacity-90 font-semibold;
+  }
+  
+  /* ProMedix EMS Gradient Backgrounds */
+  .bg-promedix-gradient {
+    background: linear-gradient(135deg, hsl(var(--ems-primary)) 0%, hsl(var(--ems-secondary)) 100%);
+  }
+  
+  .bg-medical-gradient {
+    background: linear-gradient(135deg, hsl(var(--ems-secondary)) 0%, hsl(var(--ems-primary)) 100%);
+  }
+  
+
+  
+  /* EMS Card Styles */
+  .card-ems {
+    @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-ems-critical {
+    @apply bg-card border-2 border-secondary/20 rounded-xl shadow-md;
+  }
+  
+  .card-ems-warning {
+    @apply bg-card border-2 border-accent/20 rounded-xl shadow-md;
+  }
+  
+  /* EMS Badge Styles */
+  .badge-emt-b {
+    @apply bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-aemt {
+    @apply bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-paramedic {
+    @apply bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-critical {
+    @apply bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+  
+  .badge-caution {
+    @apply bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+  
+  /* EMS Status Indicators */
+  .status-online {
+    @apply bg-green-500 text-white;
+  }
+  
+  .status-offline {
+    @apply bg-gray-500 text-white;
+  }
+  
+  .status-emergency {
+    @apply bg-red-500 text-white animate-pulse;
+  }
+  
+  /* Medical Data Display */
+  .vital-signs {
+    @apply font-mono text-lg font-semibold medical-data;
+  }
+  
+  .medication-dose {
+    @apply font-mono text-base font-medium medical-data;
+  }
+  
+  /* ProMedix EMS Gradients */
+  .gradient-ems-primary {
+    background: linear-gradient(135deg, hsl(196, 85%, 35%) 0%, hsl(196, 85%, 45%) 100%);
+  }
+  
+  .gradient-ems-emergency {
+    background: linear-gradient(135deg, hsl(0, 85%, 45%) 0%, hsl(0, 85%, 55%) 100%);
+  }
+  
+  .gradient-ems-hero {
+    background: linear-gradient(135deg, hsl(196, 85%, 35%) 0%, hsl(210, 25%, 8%) 100%);
+  }
+  
+  /* ProMedix EMS Utility Classes */
+  .text-ems-primary {
+    @apply text-primary;
+  }
+  
+  .text-ems-secondary {
+    @apply text-secondary;
+  }
+  
+  .bg-ems-primary {
+    @apply bg-primary;
+  }
+  
+  .bg-ems-secondary {
+    @apply bg-secondary;
+  }
+  
+  .bg-ems-accent {
+    @apply bg-accent;
+  }
+}
+
+/* Accessibility and Mobile Optimizations */
+@layer utilities {
+  .touch-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
+  
+  .text-high-contrast {
+    @apply text-foreground;
+  }
+  
+  .bg-high-contrast {
+    @apply bg-foreground text-background;
+  }
+}
