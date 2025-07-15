@@ -1,25 +1,9 @@
 {
-  "name": "ems-frontend",
+  "name": "rest-express",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "scripts": {
-<<<<<<< HEAD
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .ts,.tsx",
-    "check": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "vite": "^5.4.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "typescript": "^5.3.3",
-    "eslint": "^8.56.0",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.31",
-    "autoprefixer": "^10.4.19"
-=======
     "dev": "NODE_ENV=development tsx server/index.ts",
     "build": "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "node dist/index.js",
@@ -40,6 +24,8 @@
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "drizzle-kit": "^0.20.17"
->>>>>>> ef64e013b250cdd83f10ffc5ef290059ee9bf6f0
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
