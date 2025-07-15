@@ -16,7 +16,7 @@
     "seed:medications": "tsx server/seed-enhanced-medications.ts",
     "seed:chapters": "tsx server/seed-missing-chapters.ts",
     "seed:flashcards": "tsx server/seed-flashcards-clean.ts",
-<<<<<<< HEAD
+
     "seed:nremt": "tsx server/seed-nremt-questions.ts",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "vite": "^7.0.4"
-=======
+
     "seed:nremt": "tsx server/seed-nremt-questions.ts"
   },
   "devDependencies": {
@@ -33,6 +33,6 @@
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "drizzle-kit": "^0.20.17"
->>>>>>> ba350caf358dca04f75db9902cb0b6735e56adf6
+
   }
 }
