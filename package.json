@@ -18,5 +18,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.4"
   }
 }
