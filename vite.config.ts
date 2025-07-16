@@ -14,7 +14,10 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, 'client/dist'),
     sourcemap: false,
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      external: []
+    }
   },
   server: {
     port: 3000,
