@@ -4,7 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-<<<<<<< HEAD
+
 
     "dev": "vite",
     "build": "vite build",
@@ -21,7 +21,7 @@
     "postcss": "^8.4.31",
     "autoprefixer": "^10.4.19"
 
-=======
+
 >>>>>>> 2b625720398ec84c771bd8b570da47369c3189e4
     "dev": "NODE_ENV=development tsx server/index.ts",
     "build": "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
@@ -43,9 +43,9 @@
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "drizzle-kit": "^0.20.17"
-<<<<<<< HEAD
 
-=======
+
+
   },
   "engines": {
     "node": "22.x"
