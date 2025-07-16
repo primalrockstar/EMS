@@ -146,3 +146,4 @@ replit.nix
 
 # Sentry
 .sentryclirc
+.vercel
