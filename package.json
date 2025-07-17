@@ -1,38 +1,23 @@
 {
-  "name": "newemsapp-root",
-  "version": "1.0.0",
+  "name": "newemsapp",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
-    "build": "cd client && npm install && npm run build && cd .. && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "start": "node dist/index.js"
-  },
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "@tailwindcss/vite": "^4.0.0-alpha.27",
-    "@types/better-sqlite3": "^7.6.11",
-    "@types/connect-pg-simple": "^7.0.3",
-    "@types/express": "^5.0.0",
-    "@types/express-session": "^1.18.0",
-    "@types/memoizee": "^0.4.11",
-    "@types/multer": "^1.4.12",
-    "@types/node": "20.16.11",
-    "@types/passport": "^1.0.16",
-    "@types/passport-local": "^1.0.38",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.1",
-    "@types/ws": "^8.5.13",
-    "@vitejs/plugin-react": "^4.3.2",
-    "autoprefixer": "^10.4.20",
-    "cross-env": "^7.0.3",
-    "drizzle-kit": "^0.30.4",
-    "esbuild": "^0.25.0",
-    "tsx": "^4.7.0",
-    "typescript": "^5.0.0"
+    "build": "cd client && yarn build",
+    "dev": "cd client && yarn dev"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "react-router-dom": "^7.7.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.7.0",
+    "vite": "^5.4.19",
+    "@vitejs/plugin-react": "^4.6.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.4.21"
+    // add all other shared/frontend/backend deps here
+  },
+  "devDependencies": {
+    // your dev dependencies, if any
   }
 }
