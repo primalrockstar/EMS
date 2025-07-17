@@ -8,13 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    // Add your React and other frontend dependencies here, for example:
-    // "react": "^18.2.0",
-    // "react-dom": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "vite": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.0"
-    // Add any other necessary frontend devDependencies
   }
 }
