@@ -9,7 +9,7 @@ export default function AppRoutes() {
       <Route path="/" element={<Dashboard />} />
       <Route path="/patients" element={<Patients />} />
       <Route path="/settings" element={<Settings />} />
-      {/* Add more routes as needed */}
+      {/* Add more routes here */}
     </Routes>
   );
 }
