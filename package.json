@@ -1,64 +1,19 @@
 {
   "name": "new-ems-app",
   "version": "1.0.0",
-  "description": "NewEMSAPP - Emergency Medical Services Application",
+  "private": true,
   "type": "module",
-  "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development tsx server/index.ts",
-    "build": "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "start": "node dist/index.js",
-    "check": "tsc",
-    "db:push": "drizzle-kit push",
-    "db:seed": "npm run seed:all",
-    "seed:all": "npm run seed:protocols && npm run seed:medications && npm run seed:chapters && npm run seed:flashcards && npm run seed:nremt",
-    "seed:protocols": "tsx server/seed-clark-county-protocols.ts",
-    "seed:medications": "tsx server/seed-enhanced-medications.ts",
-    "seed:chapters": "tsx server/seed-missing-chapters.ts",
-    "seed:flashcards": "tsx server/seed-flashcards-clean.ts",
-    "seed:nremt": "tsx server/seed-nremt-questions.ts",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
-    "pre-deploy": "node scripts/pre-deploy.js"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^3.10.0",
-    "@jridgewell/trace-mapping": "^0.3.25",
-    "@neondatabase/serverless": "^0.10.4",
-    "drizzle-orm": "^0.38.0",
-    "drizzle-zod": "^0.5.1",
-    "express": "^4.21.2",
-    "express-session": "^1.18.1",
-    "mammoth": "^1.8.0",
-    "memoizee": "^0.4.17",
-    "memorystore": "^1.6.7",
-    "multer": "^1.4.5-lts.1",
-    "nanoid": "^5.0.9",
-    "openid-client": "^6.1.6",
-    "passport": "^0.7.0",
-    "passport-local": "^1.0.0",
-    "pdf-parse": "^1.1.1",
-    "ws": "^8.18.0",
-    "zod": "^3.24.1",
-    "zod-validation-error": "^3.4.0"
+    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
+    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "client": "npm run dev --prefix client",
+    "client:build": "npm run build --prefix client"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.11",
-    "@types/connect-pg-simple": "^7.0.3",
-    "@types/express": "^5.0.0",
-    "@types/express-session": "^1.18.0",
-    "@types/memoizee": "^0.4.11",
-    "@types/multer": "^1.4.12",
-    "@types/node": "20.16.11",
-    "@types/passport": "^1.0.16",
-    "@types/passport-local": "^1.0.38",
-    "@types/ws": "^8.5.13",
-    "drizzle-kit": "^0.30.4",
-    "esbuild": "^0.25.0",
-    "tsx": "^4.19.1",
-    "typescript": "5.6.3"
+    "cross-env": "^7.0.3",
+    "tsx": "^4.7.0"
   },
-  "optionalDependencies": {
-    "bufferutil": "^4.0.8"
+  "dependencies": {
+    // your backend/server dependencies here
   }
 }
