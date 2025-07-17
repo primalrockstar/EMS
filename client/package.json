@@ -1,18 +1,20 @@
 {
-  "name": "ems-frontend",
+  "name": "new-ems-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    // Add your React and other frontend dependencies here
+    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
+    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "client": "npm run dev --prefix client",
+    "client:build": "npm run build --prefix client",
+    "client:preview": "npm run preview --prefix client"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0"
-    // Add any other necessary frontend devDependencies
+    "cross-env": "^7.0.3",
+    "tsx": "^4.7.0"
+  },
+  "dependencies": {
+    // Add your backend/server dependencies here, e.g. express, cors, etc.
   }
 }
