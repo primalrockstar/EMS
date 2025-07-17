@@ -1,13 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "@/pages/Dashboard";
+// Add or import other pages as you create them, for example:
+import Patients from "@/pages/Patients";
+import Settings from "@/pages/Settings";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/patients" element={<Patients />} />
+      <Route path="/settings" element={<Settings />} />
+      {/* Add more routes here as needed */}
+    </Routes>
+  );
+}
