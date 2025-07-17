@@ -7,13 +7,14 @@
     "dev": "cross-env NODE_ENV=development tsx server/index.ts",
     "start": "cross-env NODE_ENV=production tsx server/index.ts",
     "client": "npm run dev --prefix client",
-    "client:build": "npm run build --prefix client"
+    "client:build": "npm run build --prefix client",
+    "client:preview": "npm run preview --prefix client"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "tsx": "^4.7.0"
   },
   "dependencies": {
-    // your backend/server dependencies here
+    // Add your backend dependencies here, e.g. express, cors, etc.
   }
 }
