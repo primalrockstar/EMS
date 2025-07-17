@@ -8,11 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    // your frontend dependencies (react, etc) go here
+    // Add your React and other frontend dependencies here
   },
   "devDependencies": {
     "vite": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.0"
-    // plus any others
+    // Add any other necessary frontend devDependencies
   }
 }
