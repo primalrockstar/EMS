@@ -1,23 +1,7 @@
 {
   "name": "newemsapp",
   "private": true,
-  "scripts": {
-    "build": "cd client && yarn build",
-    "dev": "cd client && yarn dev"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^7.7.0",
-    "vite": "^5.4.19",
-    "@vitejs/plugin-react": "^4.6.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.11",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.4.21"
-    // add all other shared/frontend/backend deps here
-  },
-  "devDependencies": {
-    // your dev dependencies, if any
-  }
+  "workspaces": [
+    "client"
+  ]
 }

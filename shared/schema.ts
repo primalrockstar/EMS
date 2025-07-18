@@ -10,7 +10,7 @@ export const users = pgTable("users", {
   firstName: text("first_name"),
   lastName: text("last_name"),
   profileImageUrl: text("profile_image_url"),
-  tier: text("tier").notNull().default("basic"), // "basic" or "pro"
+  tier: text("tier").notNull().default("basic"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -18,14 +18,14 @@ export const users = pgTable("users", {
 export const protocols = pgTable("protocols", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  category: text("category").notNull(), // "cardiac", "respiratory", "trauma", etc.
-  state: text("state"), // state/region specific
-  ageGroup: text("age_group").default("adult_pediatric"), // "adult", "pediatric", "adult_pediatric"
+  category: text("category").notNull(),
+  state: text("state"),
+  ageGroup: text("age_group").default("adult_pediatric"),
   content: text("content").notNull(),
   description: text("description"),
-  scope: text("scope"), // "EMT-B", "AEMT", "Paramedic"
+  scope: text("scope"),
   filePath: text("file_path"),
-  fileType: text("file_type"), // "pdf", "docx", "json"
+  fileType: text("file_type"),
   isOffline: boolean("is_offline").default(false),
   userId: integer("user_id").references(() => users.id),
   createdAt: timestamp("created_at").defaultNow(),
@@ -35,20 +35,20 @@ export const protocols = pgTable("protocols", {
 export const medications = pgTable("medications", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
-  scope: text("scope").notNull(), // "EMT-B", "AEMT", "Paramedic"
+  scope: text("scope").notNull(),
   indications: text("indications").array(),
   contraindications: text("contraindications").array(),
   adultDose: text("adult_dose"),
   pediatricDose: text("pediatric_dose"),
-  route: text("route"), // "IV", "IM", "PO", etc.
-  category: text("category"), // "cardiac", "respiratory", etc.
+  route: text("route"),
+  category: text("category"),
   notes: text("notes"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const calculatorResults = pgTable("calculator_results", {
   id: serial("id").primaryKey(),
-  calculatorType: text("calculator_type").notNull(), // "apgar", "pediatric_dose", etc.
+  calculatorType: text("calculator_type").notNull(),
   inputs: jsonb("inputs").notNull(),
   result: jsonb("result").notNull(),
   userId: integer("user_id").references(() => users.id),
@@ -85,8 +85,8 @@ export const flashcards = pgTable("flashcards", {
   chapterNumber: integer("chapter_number").notNull(),
   question: text("question").notNull(),
   answer: text("answer").notNull(),
-  difficulty: text("difficulty").notNull(), // "easy", "medium", "hard"
-  category: text("category").notNull(), // topic category for the flashcard
+  difficulty: text("difficulty").notNull(),
+  category: text("category").notNull(),
   tags: text("tags").array(),
   timesCorrect: integer("times_correct").default(0),
   timesIncorrect: integer("times_incorrect").default(0),
@@ -98,17 +98,17 @@ export const flashcards = pgTable("flashcards", {
 
 export const nremtQuestions = pgTable("nremt_questions", {
   id: serial("id").primaryKey(),
-  scope: text("scope").notNull(), // "EMR", "EMT", "AEMT", "Paramedic"
-  contentArea: text("content_area").notNull(), // "Airway", "Cardiology", "Trauma", "Medical", "Operations"
-  questionType: text("question_type").notNull(), // "multiple-choice", "multiple-response", "drag-drop", "build-list", "clinical-judgment"
+  scope: text("scope").notNull(),
+  contentArea: text("content_area").notNull(),
+  questionType: text("question_type").notNull(),
   questionText: text("question_text").notNull(),
-  scenario: text("scenario"), // For clinical judgment questions
+  scenario: text("scenario"),
   options: text("options").array().notNull(),
   correctAnswer: text("correct_answer").notNull(),
   explanation: text("explanation").notNull(),
-  protocolReference: text("protocol_reference"), // Links to app protocols
-  calculatorLink: text("calculator_link"), // Links to app calculators
-  difficulty: text("difficulty").notNull(), // "easy", "medium", "hard"
+  protocolReference: text("protocol_reference"),
+  calculatorLink: text("calculator_link"),
+  difficulty: text("difficulty").notNull(),
   tags: text("tags").array(),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
@@ -120,9 +120,9 @@ export const nremtExamSessions = pgTable("nremt_exam_sessions", {
   scope: text("scope").notNull(),
   totalQuestions: integer("total_questions").notNull(),
   correctAnswers: integer("correct_answers").notNull(),
-  timeSpent: integer("time_spent"), // in seconds
+  timeSpent: integer("time_spent"),
   isPassed: boolean("is_passed").default(false),
-  sessionData: jsonb("session_data"), // Store detailed session info
+  sessionData: jsonb("session_data"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
