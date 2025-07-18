@@ -1,13 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "outDir": "dist",
-    "rootDir": "."
-  },
-  "exclude": ["node_modules", "dist", "client"]
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
 }
