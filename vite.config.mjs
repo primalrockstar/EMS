@@ -1,8 +1,12 @@
-// client/vite.config.mjs
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
 
 export default defineConfig({
   plugins: [tsconfigPaths()],
-  // ...other config
+  resolve: {
+    alias: {
+      '@shared': path.resolve(__dirname, '../shared')
+    }
+  }
 });
