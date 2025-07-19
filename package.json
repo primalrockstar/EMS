@@ -1,16 +1,13 @@
 {
   "name": "ems",
-  "version": "1.0.0",
   "private": true,
-  "type": "module",
   "workspaces": [
     "client",
     "shared"
   ],
   "scripts": {
-    "dev": "yarn workspace client dev",
     "build": "yarn workspace client build",
-    "preview": "yarn workspace client preview",
+    "dev": "yarn workspace client dev",
     "lint": "yarn workspace client lint",
     "format": "yarn workspace client format",
     "type-check": "yarn workspace client type-check"
