@@ -1,15 +1,21 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default function TopNavigation() {
-  return (
-    <nav className="w-full bg-white border-b flex justify-center items-center gap-8 h-16 z-10">
-      <Link to="/" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Home</Link>
-      <Link to="/dashboard" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Dashboard</Link>
-      <Link to="/calculators" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Calculators</Link>
-      <Link to="/medications" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Medications</Link>
-      <Link to="/protocols" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Protocols</Link>
-      <Link to="/learning" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Learning</Link>
-      <Link to="/pro" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Pro</Link>
-    </nav>
-  );
-}
+const TopNavigation: React.FC = () => (
+  <nav className="top-nav flex items-center gap-4 p-2 bg-white shadow">
+    <Link to="/">
+      <img
+        src="/logo2_1752462736002.png"
+        alt="ProMedix EMS Logo"
+        height={40}
+        style={{ marginRight: 16 }}
+      />
+    </Link>
+    <Link to="/dashboard" className="font-semibold">
+      Dashboard
+    </Link>
+    {/* Add more navigation links as needed */}
+  </nav>
+);
+
+export default TopNavigation;
