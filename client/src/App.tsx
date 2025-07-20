@@ -1,42 +1,39 @@
-import queryClient from "@/lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import AppRoutes from "@/routes";
-import Header from "@/components/layout/header";
-import VoiceControl from "@/components/voice-control";
-import LegalDisclaimer, { useDisclaimerCheck } from "@/components/legal-disclaimer";
-import TodoList from "@/components/TodoList";
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Router() {
-  const { showDisclaimer, setShowDisclaimer } = useDisclaimerCheck();
+const Header: React.FC = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.style.display = "none";
+    const fallbackText = e.currentTarget.nextElementSibling as HTMLElement;
+    if (fallbackText) {
+      fallbackText.style.display = "inline";
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pb-20">
-        <TodoList />
-        <AppRoutes />
-      </main>
-      {/* Removed <BottomNavigation /> */}
-      <VoiceControl />
-      <LegalDisclaimer 
-        open={showDisclaimer} 
-        onOpenChange={setShowDisclaimer} 
-      />
-    </div>
+    <header className="top-nav flex items-center gap-4 p-2 bg-white shadow">
+      <Link to="/" className="flex items-center">
+        <img
+          src="/client/public/emslogo.png"
+          alt="ProMedix EMS Logo"
+          height={40}
+          style={{ marginRight: 16 }}
+          onError={handleImageError}
+        />
+        <span 
+          style={{ 
+            fontSize: '18px', 
+            fontWeight: 'bold',
+            color: '#dc2626',
+            display: 'none'
+          }}
+        >
+          ProMedix EMS
+        </span>
+      </Link>
+      {/* Dashboard link removed - no other navigation items */}
+    </header>
   );
-}
+};
 
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
-}
-
-export default App;
+export default Header;
