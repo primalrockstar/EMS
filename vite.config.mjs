@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(process.cwd(), 'client/src'),      // <-- your main src alias
-      '@shared': path.resolve(process.cwd(), 'shared'),    // <-- add this line
+      '@': path.resolve(process.cwd(), 'client/src'),
+      '@shared': path.resolve(process.cwd(), 'shared'),
     },
   },
 })
