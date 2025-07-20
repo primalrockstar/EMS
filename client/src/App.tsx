@@ -3,7 +3,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppRoutes from "@/routes";
-import BottomNavigation from "@/components/layout/bottom-navigation";
 import Header from "@/components/layout/header";
 import VoiceControl from "@/components/voice-control";
 import LegalDisclaimer, { useDisclaimerCheck } from "@/components/legal-disclaimer";
