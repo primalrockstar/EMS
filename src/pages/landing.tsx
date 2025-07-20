@@ -2,36 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const features = [
-  {
-    title: "650+ Study Cards",
-    description: "Comprehensive flashcards across all EMS categories",
-    icon: "📖"
-  },
-  {
-    title: "Interactive Scenarios",
-    description: "40+ real-world emergency training cases",
-    icon: "❤️"
-  },
-  {
-    title: "Medication Reference",
-    description: "Complete drug database with dosing information",
-    icon: "💊"
-  },
-  {
-    title: "15 Medical Calculators",
-    description: "Essential tools for field calculations",
-    icon: "🧮"
-  },
-  {
-    title: "Protocol Assistant",
-    description: "AI-powered protocol guidance with voice control",
-    icon: "🤖"
-  },
-  {
-    title: "Clark County Protocols",
-    description: "Official EMS protocols for Las Vegas region",
-    icon: "📜"
-  },
+  { title: "650+ Study Cards", description: "Comprehensive flashcards across all EMS categories", icon: "📖" },
+  { title: "Interactive Scenarios", description: "40+ real-world emergency training cases", icon: "❤️" },
+  { title: "Medication Reference", description: "Complete drug database with dosing information", icon: "💊" },
+  { title: "15 Medical Calculators", description: "Essential tools for field calculations", icon: "🧮" },
+  { title: "Protocol Assistant", description: "AI-powered protocol guidance with voice control", icon: "🤖" },
+  { title: "Clark County Protocols", description: "Official EMS protocols for Las Vegas region", icon: "📜" },
 ];
 
 const Landing: React.FC = () => {
