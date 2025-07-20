@@ -1,11 +1,21 @@
-function Header() {
-  return (
-    <header className="flex items-center p-4 bg-white shadow">
-      <img src="/logo2_1752462736002.png" alt="Logo" className="h-10 mr-2" />
-      <span className="font-bold text-xl"></span>
-      {/* Add more header elements here if needed */}
-    </header>
-  );
-}
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Header: React.FC = () => (
+  <header className="top-nav flex items-center gap-4 p-2 bg-white shadow">
+    <Link to="/">
+      <img
+        src="/emslogo.png"
+        alt="ProMedix EMS Logo"
+        height={40}
+        style={{ marginRight: 16 }}
+      />
+    </Link>
+    <Link to="/dashboard" className="font-semibold">
+      Dashboard
+    </Link>
+    {/* Add more navigation links as needed */}
+  </header>
+);
 
 export default Header;
