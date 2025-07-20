@@ -34,7 +34,7 @@ const features = [
   },
 ];
 
-const LandingPage: React.FC = () => {
+const Landing: React.FC = () => {
   const navigate = useNavigate();
 
   return (
@@ -73,4 +73,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default LandingPage;
+export default Landing;
