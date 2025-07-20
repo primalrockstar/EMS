@@ -1,4 +1,4 @@
-import { useState, createContext, useContext, ReactNode } from "react";
+import React, { useState, createContext, useContext, ReactNode } from "react";
 
 type ToastData = {
   id: string;
@@ -8,23 +8,27 @@ type ToastData = {
   [key: string]: any;
 };
 
-const ToastContext = createContext<{ toasts: ToastData[] }>({ toasts: [] });
+interface ToastContextValue {
+  toasts: ToastData[];
+  setToasts: React.Dispatch<React.SetStateAction<ToastData[]>>;
+}
+
+const ToastContext = createContext<ToastContextValue | undefined>(undefined);
 
 export function ToastProvider({ children }: { children: ReactNode }) {
-  const [toasts] = useState<ToastData[]>([
-    {
-      id: "1",
-      title: "Hello!",
-      description: "This is a toast message.",
-    },
-  ]);
+  const [toasts, setToasts] = useState<ToastData[]>([]);
+
   return (
-    <ToastContext.Provider value={{ toasts }}>
+    <ToastContext.Provider value={{ toasts, setToasts }}>
       {children}
     </ToastContext.Provider>
   );
 }
 
 export function useToast() {
-  return useContext(ToastContext);
+  const context = useContext(ToastContext);
+  if (!context) {
+    throw new Error("useToast must be used within a ToastProvider");
+  }
+  return context;
 }
