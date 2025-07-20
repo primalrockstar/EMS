@@ -1,8 +1,6 @@
 import { z } from "zod";
 
-// You can copy-paste your insertStudyNotesSchema and StudyNote type from your Drizzle model
-// This re-exports them for use in your frontend.
-
+// This schema can be shared between backend and frontend.
 export const insertStudyNotesSchema = z.object({
   chapterNumber: z.number().min(1).max(41),
   title: z.string().min(1),
