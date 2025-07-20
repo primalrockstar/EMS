@@ -1,11 +1,18 @@
-export default function Header() {
-  return (
-    <header className="h-16 flex items-center justify-center bg-white shadow">
+import React from "react";
+import { Link } from "react-router-dom";
+
+const Header: React.FC = () => (
+  <header className="top-nav flex items-center gap-4 p-2 bg-white shadow">
+    <Link to="/">
       <img
-        src="/logo2_1752462736002.png"
-        alt=
-        className="h-10"
+        src="/emslogo.png"
+        alt="ProMedix EMS Logo"
+        height={40}
+        style={{ marginRight: 16 }}
+        onError={e => (e.currentTarget.style.display = "none")}
       />
-    </header>
-  );
-}
+    </Link>
+  </header>
+);
+
+export default Header;
