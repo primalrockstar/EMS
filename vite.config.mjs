@@ -10,8 +10,4 @@ export default defineConfig({
       '@shared': path.resolve(process.cwd(), 'shared'),
     },
   },
-
 })
-
-})
-
