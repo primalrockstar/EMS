@@ -1,9 +1,12 @@
 {
   "name": "ems",
-  "version": "1.0.0",
   "private": true,
-  "type": "module",
+  "workspaces": [
+    "client",
+    "shared"
+  ],
   "scripts": {
+
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -41,20 +44,15 @@
     "tailwind-merge": "^3.3.1",
     "wouter": "^3.7.1",
     "zod": "^4.0.5"
+
+    "build": "yarn workspace client build",
+    "dev": "yarn workspace client dev",
+    "lint": "yarn workspace client lint",
+    "format": "yarn workspace client format",
+    "type-check": "yarn workspace client type-check"
+
   },
   "devDependencies": {
-    "@types/react": "^18.2.28",
-    "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react": "^7.34.1",
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5",
     "vite": "^7.0.5",
     "vite-tsconfig-paths": "^4.3.2"
   }
