@@ -1,26 +1,37 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, BookOpen, Calculator, Pill, MessageSquare, Badge, User, MapPin } from "lucide-react";
 
 export default function Landing() {
-  const [, setLocation] = useLocation();
+  const navigate = useNavigate();
   const [isAnimating, setIsAnimating] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(15);
+
+  useEffect(() => {
+    // Countdown timer for the visible counter
+    if (secondsLeft > 0) {
+      const interval = setInterval(() => {
+        setSecondsLeft((s) => s - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [secondsLeft]);
 
   useEffect(() => {
     // Auto-redirect after 15 seconds if no interaction
     const timer = setTimeout(() => {
-      setLocation("/dashboard");
+      navigate("/dashboard");
     }, 15000);
 
     return () => clearTimeout(timer);
-  }, [setLocation]);
+  }, [navigate]);
 
   const handleEnterApp = () => {
     setIsAnimating(true);
     setTimeout(() => {
-      setLocation("/dashboard");
+      navigate("/dashboard");
     }, 300);
   };
 
@@ -99,23 +110,26 @@ export default function Landing() {
             ))}
           </div>
 
-          {/* CTA Button - Use Wouter Link for navigation */}
+          {/* CTA Button */}
           <div className="mb-8">
-            <Link href="/dashboard">
-              <Button 
-                size="lg"
-                className={`bg-white text-red-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 ${
-                  isAnimating ? 'scale-95 opacity-75' : 'hover:scale-105'
-                }`}
-                onClick={() => setIsAnimating(true)}
-              >
-                Enter ProMedix EMS
-              </Button>
-            </Link>
+            <Button 
+              size="lg"
+              className={`bg-white text-red-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 ${
+                isAnimating ? 'scale-95 opacity-75' : 'hover:scale-105'
+              }`}
+              onClick={handleEnterApp}
+            >
+              Enter ProMedix EMS
+            </Button>
+          </div>
+
+          {/* Countdown */}
+          <div className="mt-4 text-white text-center text-sm opacity-80">
+            Redirecting to the basic homepage in {secondsLeft} second{secondsLeft !== 1 ? "s" : ""}...
           </div>
 
           {/* Developer Info */}
-          <div className="text-center opacity-75 text-sm">
+          <div className="text-center opacity-75 text-sm mt-8">
             <div className="flex items-center justify-center gap-2 mb-2">
               <User className="h-4 w-4" />
               <span>Created by Shaun Williamson</span>
