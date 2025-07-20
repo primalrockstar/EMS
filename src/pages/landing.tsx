@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, BookOpen, Calculator, Pill, MessageSquare, Badge, User, MapPin } from "lucide-react";
@@ -9,8 +9,8 @@ export default function Landing() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(15);
 
+  // Countdown for visible timer
   useEffect(() => {
-    // Countdown timer for the visible counter
     if (secondsLeft > 0) {
       const interval = setInterval(() => {
         setSecondsLeft((s) => s - 1);
@@ -19,12 +19,11 @@ export default function Landing() {
     }
   }, [secondsLeft]);
 
+  // Timer for auto-redirect
   useEffect(() => {
-    // Auto-redirect after 15 seconds if no interaction
     const timer = setTimeout(() => {
       navigate("/dashboard");
     }, 15000);
-
     return () => clearTimeout(timer);
   }, [navigate]);
 
