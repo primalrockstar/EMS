@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
-export default function BottomNavigation() {
+export default function TopNavigation() {
   return (
-    <nav className="fixed bottom-0 inset-x-0 bg-background border-t flex justify-around items-center h-16 z-10">
-      <Link to="/" className="py-2 px-4">Home</Link>
-      <Link to="/dashboard" className="py-2 px-4">Dashboard</Link>
-      <Link to="/calculators" className="py-2 px-4">Calculators</Link>
-      <Link to="/medications" className="py-2 px-4">Medications</Link>
-      <Link to="/protocols" className="py-2 px-4">Protocols</Link>
-      <Link to="/pro" className="py-2 px-4">Pro</Link>
+    <nav className="w-full bg-white border-b flex justify-center items-center gap-8 h-16 z-10">
+      <Link to="/" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Home</Link>
+      <Link to="/dashboard" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Dashboard</Link>
+      <Link to="/calculators" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Calculators</Link>
+      <Link to="/medications" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Medications</Link>
+      <Link to="/protocols" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Protocols</Link>
+      <Link to="/learning" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Learning</Link>
+      <Link to="/pro" className="py-2 px-4 font-medium text-gray-700 hover:text-blue-600">Pro</Link>
     </nav>
   );
 }
