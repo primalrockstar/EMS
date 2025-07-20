@@ -3,7 +3,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppRoutes from "@/routes";
-import BottomNavigation from "@/components/layout/bottom-navigation";
+import TopNavigation from "@/components/layout/TopNavigation";
 import Header from "@/components/layout/header";
 import VoiceControl from "@/components/voice-control";
 import LegalDisclaimer, { useDisclaimerCheck } from "@/components/legal-disclaimer";
@@ -12,12 +12,12 @@ function Router() {
   const { showDisclaimer, setShowDisclaimer } = useDisclaimerCheck();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
-      <main className="pb-20">
+      <TopNavigation />
+      <main className="flex-1">
         <AppRoutes />
       </main>
-      <BottomNavigation />
       <VoiceControl />
       <LegalDisclaimer 
         open={showDisclaimer} 
