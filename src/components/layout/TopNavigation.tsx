@@ -5,7 +5,7 @@ const TopNavigation: React.FC = () => (
   <nav className="top-nav flex items-center gap-4 p-2 bg-white shadow">
     <Link to="/">
       <img
-        src="/logo2_1752462736002.png"
+        src="/emslogo.png"
         alt="ProMedix EMS Logo"
         height={40}
         style={{ marginRight: 16 }}
