@@ -6,7 +6,6 @@
     "shared"
   ],
   "scripts": {
-
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -44,13 +43,6 @@
     "tailwind-merge": "^3.3.1",
     "wouter": "^3.7.1",
     "zod": "^4.0.5"
-
-    "build": "yarn workspace client build",
-    "dev": "yarn workspace client dev",
-    "lint": "yarn workspace client lint",
-    "format": "yarn workspace client format",
-    "type-check": "yarn workspace client type-check"
-
   },
   "devDependencies": {
     "vite": "^7.0.5",
