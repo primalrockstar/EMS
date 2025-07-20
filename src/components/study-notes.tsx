@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertStudyNotesSchema, type StudyNote } from "../../shared/schema";
+import { insertStudyNotesSchema, type StudyNote } from "@shared/schema";
 import { z } from "zod";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -161,4 +161,10 @@ export default function StudyNotes({ open, onOpenChange }: StudyNotesProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
         <DialogHeader>
-         
+          <DialogTitle>Study Notes</DialogTitle>
+        </DialogHeader>
+        {/* ...rest of your code... */}
+      </DialogContent>
+    </Dialog>
+  );
+}
