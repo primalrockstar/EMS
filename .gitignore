@@ -1,147 +1,150 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Heart, BookOpen, Calculator, Pill, MessageSquare, Badge, User, MapPin } from "lucide-react";
+# ===========================
+# Node & JS package managers
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
 
-export default function Landing() {
-  const [, setLocation] = useLocation();
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [timer, setTimer] = useState(15);
-  const [enabled, setEnabled] = useState(false);
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/
+.vuepress/dist/
 
-  useEffect(() => {
-    if (timer > 0) {
-      const id = setTimeout(() => setTimer(timer - 1), 1000);
-      return () => clearTimeout(id);
-    } else {
-      setEnabled(true);
-      // Optional: auto-redirect after timer
-      // setLocation("/dashboard");
-    }
-  }, [timer, setLocation]);
+# TypeScript cache
+*.tsbuildinfo
 
-  const handleEnterApp = () => {
-    if (!enabled) return;
-    setIsAnimating(true);
-    setTimeout(() => {
-      setLocation("/dashboard");
-    }, 300);
-  };
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-  const features = [
-    {
-      icon: <BookOpen className="h-6 w-6" />,
-      title: "650+ Study Cards",
-      description: "Comprehensive flashcards across all EMS categories"
-    },
-    {
-      icon: <Heart className="h-6 w-6" />,
-      title: "Interactive Scenarios",
-      description: "40+ real-world emergency training cases"
-    },
-    {
-      icon: <Pill className="h-6 w-6" />,
-      title: "Medication Reference",
-      description: "Complete drug database with dosing information"
-    },
-    {
-      icon: <Calculator className="h-6 w-6" />,
-      title: "15 Medical Calculators",
-      description: "Essential tools for field calculations"
-    },
-    {
-      icon: <MessageSquare className="h-6 w-6" />,
-      title: "Protocol Assistant",
-      description: "AI-powered protocol guidance with voice control"
-    },
-    {
-      icon: <Badge className="h-6 w-6" />,
-      title: "Clark County Protocols",
-      description: "Official EMS protocols for Las Vegas region"
-    }
-  ];
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
-      
-      <div className="relative z-10 flex items-center justify-center min-h-screen p-6">
-        <div className="max-w-4xl w-full text-center">
-          {/* Logo and Title */}
-          <div className="mb-8">
-            <div className="flex items-center justify-center mb-4 gap-4">
-              {/* LOGO */}
-              <img
-                src="/logo2_1752462736002.png"
-                alt="Logo"
-                className="h-12 w-auto bg-white rounded shadow"
-                style={{ objectFit: "contain" }}
-                onError={e => (e.currentTarget.style.display = "none")}
-              />
-              <div className="text-6xl font-bold bg-gradient-to-r from-white to-gray-100 bg-clip-text text-transparent">
-                ProMedix EMS
-              </div>
-            </div>
-            <div className="text-sm opacity-80 mb-2">© 2025 ProMedix EMS</div>
-            <div className="text-2xl font-semibold mb-4">
-              Professional Emergency Medical Services Training
-            </div>
-            <div className="text-lg opacity-90 max-w-2xl mx-auto leading-relaxed">
-              ProMedix EMS is a comprehensive training platform for EMT, AEMT, and Paramedic certification levels. 
-              Features interactive scenarios, medication references, Clark County protocols, 
-              and advanced study tools for emergency medical professionals.
-            </div>
-          </div>
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/15 transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4 text-white">
-                    {feature.icon}
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-sm opacity-90">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
-          {/* CTA Button */}
-          <div className="mb-8">
-            <Button
-              size="lg"
-              className={`bg-white text-red-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 ${
-                isAnimating ? 'scale-95 opacity-75' : 'hover:scale-105'
-              }`}
-              onClick={handleEnterApp}
-              disabled={!enabled}
-            >
-              {enabled ? "Enter ProMedix EMS" : `Wait ${timer} seconds...`}
-            </Button>
-          </div>
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
 
-          {/* Developer Info */}
-          <div className="text-center opacity-75 text-sm">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <User className="h-4 w-4" />
-              <span>Created by Shaun Williamson</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <MapPin className="h-4 w-4" />
-              <span>Las Vegas, Nevada</span>
-            </div>
-            <div className="text-xs">
-              © 2025 ProMedix EMS. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+#/public   # <-- Only ignore top-level public if your build tool requires it. Otherwise, comment out or delete this line.
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Database
+*.db
+*.sqlite
+
+# Uploads
+uploads/
+
+# Replit specific (exclude from other deployments)
+.replit
+replit.nix
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local Netlify folder
+.netlify
+
+# Vercel
+.vercel
+
+# Sentry
+.sentryclirc
+.vercel
+
+# Do NOT ignore public folders in subdirectories like client/public
+# Only use '/public' if you specifically want to ignore the top-level public folder.
