@@ -18,7 +18,7 @@ function Router() {
         <TodoList />
         <AppRoutes />
       </main>
-      <BottomNavigation />
+      {/* Removed <BottomNavigation /> */}
       <VoiceControl />
       <LegalDisclaimer 
         open={showDisclaimer} 
