@@ -6,6 +6,4 @@ export async function apiRequest<T = unknown>(url: string, options?: RequestInit
   throw new Error("apiRequest is not yet implemented");
 }
 
-const queryClient = new QueryClient();
-
-export default queryClient;
+export const queryClient = new QueryClient();
