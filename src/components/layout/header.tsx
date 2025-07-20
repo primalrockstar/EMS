@@ -6,6 +6,7 @@ const Header: React.FC = () => (
     <Link to="/">
       <img
         src="/emslogo.png"
+        alt="ProMedix EMS Logo"
         height={40}
         style={{ marginRight: 16 }}
         onError={e => (e.currentTarget.style.display = "none")}
