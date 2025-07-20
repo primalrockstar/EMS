@@ -1,7 +1,11 @@
 export default function Header() {
   return (
-    <header className="bg-gray-200 border-b p-4">
-      <h1 className="text-lg font-bold">Header</h1>
+    <header className="h-16 flex items-center justify-center bg-white shadow">
+      <img
+        src="/logo2_1752462736002.png"
+        alt="ProMedix EMS Logo"
+        className="h-10"
+      />
     </header>
   );
 }
