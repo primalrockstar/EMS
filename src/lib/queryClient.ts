@@ -1,9 +1,18 @@
 import { QueryClient } from '@tanstack/react-query';
 
-// Minimal placeholder for apiRequest (from previous error)
-export async function apiRequest<T = unknown>(url: string, options?: RequestInit): Promise<T> {
-  throw new Error("apiRequest is not yet implemented");
-}
-
-export const queryClient = new QueryClient();
-export default queryClient;
+// Create and export the query client with sensible defaults
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // Data is considered stale after 5 minutes
+      staleTime: 1000 * 60 * 5,
+      // Retry failed requests once
+      retry: 1,
+      // Only refetch on window focus in production
+      refetchOnWindowFocus: process.env.NODE_ENV === 'production',
+    },
+    mutations: {
+      retry: 1,
+    },
+  },
+});
