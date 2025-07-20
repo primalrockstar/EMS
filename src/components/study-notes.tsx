@@ -109,7 +109,6 @@ export default function StudyNotes({ open, onOpenChange }: StudyNotesProps) {
   });
 
   const onSubmit = (data: z.infer<typeof insertStudyNotesSchema>) => {
-    // Process tags, keyPoints, objectives if they are input as comma strings
     const processedData = {
       ...data,
       tags: typeof data.tags === 'string' ? data.tags.split(',').map(tag => tag.trim()) : data.tags,
@@ -150,4 +149,19 @@ export default function StudyNotes({ open, onOpenChange }: StudyNotesProps) {
     if (chapterNumber <= 9) return "Foundation";
     if (chapterNumber <= 14) return "Basic Skills";
     if (chapterNumber <= 24) return "Medical Emergencies";
-   
+    if (chapterNumber <= 33) return "Trauma";
+    if (chapterNumber <= 36) return "Special Populations";
+    if (chapterNumber <= 39) return "Operations";
+    return "Advanced Topics";
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5" />
+            Study Notes - Emergency Care & Transportation 12th Edition
+          </DialogTitle>
+        </DialogHeader>
+        <div className="flex-1 flex gap-
