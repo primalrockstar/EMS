@@ -15,7 +15,9 @@ import { insertStudyNotesSchema, type StudyNote } from "../../shared/schema";
 import { z } from "zod";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { BookOpen, Plus, Search, Edit, Trash2, CheckCircle, Clock, Target, Hash, Award, ChevronRight, Brain, Heart, Activity, Shield, AlertTriangle, Users, Zap, Eye, Stethoscope, Pill, Thermometer, Scissors, Car, Siren, Flame, Baby, UserCheck, Settings, Truck, Wrench, Radio, Biohazard } from "lucide-react";
+import {
+  BookOpen, Plus, Search, Edit, Trash2, CheckCircle, Clock, Target, Hash, Award, ChevronRight, Brain, Heart, Activity, Shield, AlertTriangle, Users, Zap, Eye, Stethoscope, Pill, Thermometer, Scissors, Car, Siren, Flame, Baby, UserCheck, Settings, Truck, Wrench, Radio, Biohazard
+} from "lucide-react";
 
 interface StudyNotesProps {
   open: boolean;
@@ -159,9 +161,4 @@ export default function StudyNotes({ open, onOpenChange }: StudyNotesProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-6xl h-[90vh] flex flex-col">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5" />
-            Study Notes - Emergency Care & Transportation 12th Edition
-          </DialogTitle>
-        </DialogHeader>
-        <div className="flex-1 flex gap-
+         
