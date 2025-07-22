@@ -1,41 +1,32 @@
-import { useLocation } from "react-router-dom";
-import Header from "@/components/layout/header";
-import TopNavigation from "@/components/layout/TopNavigation";
-import AppRoutes from "@/routes";
-import VoiceControl from "@/components/voice-control";
-import LegalDisclaimer, { useDisclaimerCheck } from "@/components/legal-disclaimer";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/lib/queryClient";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { Header } from './components/layout/Header'
+import { Landing } from './pages/Landing'  // Add this import
 
-function Router() {
-  const { pathname } = useLocation();
-  const { showDisclaimer, setShowDisclaimer } = useDisclaimerCheck();
-  const showNav = pathname !== "/";
-
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      {showNav && <TopNavigation />}
-      <main className="flex-1">
-        <AppRoutes />
-      </main>
-      <VoiceControl />
-      <LegalDisclaimer open={showDisclaimer} onOpenChange={setShowDisclaimer} />
-    </div>
-  );
-}
+// Keep your other simple components
+const Dashboard = () => <div className="p-8"><h1 className="text-3xl font-bold">Dashboard</h1><p>Welcome to EMS Platform!</p></div>
+const Calculators = () => <div className="p-8"><h1 className="text-3xl font-bold">Medical Calculators</h1><p>Your calculators will go here.</p></div>
+const Protocols = () => <div className="p-8"><h1 className="text-3xl font-bold">Protocols</h1><p>Emergency protocols.</p></div>
+const Learning = () => <div className="p-8"><h1 className="text-3xl font-bold">Learning</h1><p>Training modules.</p></div>
+const Medications = () => <div className="p-8"><h1 className="text-3xl font-bold">Medications</h1><p>Drug database.</p></div>
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <main className="container mx-auto px-4 py-8">
+        <Routes>
+          <Route path="/" element={<Landing />} />  {/* Updated this line */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/calculators" element={<Calculators />} />
+          <Route path="/protocols" element={<Protocols />} />
+          <Route path="/learning" element={<Learning />} />
+          <Route path="/medications" element={<Medications />} />
+          <Route path="*" element={<div>Page not found</div>} />
+        </Routes>
+      </main>
+    </div>
+  )
 }
 
-export default App;
+export default App

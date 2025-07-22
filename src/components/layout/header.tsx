@@ -1,40 +1,93 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { 
+  Heart, 
+  Calculator, 
+  BookOpen, 
+  FileText, 
+  Pill,
+  Menu,
+  X 
+} from 'lucide-react'
 
-const Header: React.FC = () => (
-  <header className="top-nav flex items-center gap-4 p-2 bg-white shadow">
-    <Link to="/">
-      <img
-        src="/emslogo.png"
-        alt="ProMedix EMS Logo"
-        height={40}
-        style={{ marginRight: 16 }}
-        onError={(e) => {
-          // Show fallback text instead of hiding
-          e.currentTarget.style.display = "none";
-          // You could also replace with a fallback image or text
-        }}
-      />
-      {/* Fallback text that will show if image fails */}
-      <span 
-        style={{ 
-          fontSize: '18px', 
-          fontWeight: 'bold',
-          color: '#dc2626',
-          display: 'none'
-        }}
-        onLoad={() => {
-          // This span will be visible if image fails to load
-          const img = document.querySelector('img[alt="ProMedix EMS Logo"]') as HTMLImageElement;
-          if (!img || img.style.display === 'none') {
-            (document.querySelector('span') as HTMLElement).style.display = 'inline';
-          }
-        }}
-      >
-        ProMedix EMS
-      </span>
-    </Link>
-  </header>
-);
+export const Header: React.FC = () => {
+  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-export default Header;
+  const navigation = [
+    { name: 'Dashboard', href: '/dashboard', icon: Heart },
+    { name: 'Calculators', href: '/calculators', icon: Calculator },
+    { name: 'Protocols', href: '/protocols', icon: FileText },
+    { name: 'Learning', href: '/learning', icon: BookOpen },
+    { name: 'Medications', href: '/medications', icon: Pill },
+  ]
+
+  const isActive = (path: string) => location.pathname === path
+
+  return (
+    <header className="bg-white shadow-sm border-b">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <Heart className="h-8 w-8 text-red-500" />
+            <span className="text-xl font-bold text-gray-900">EMS Platform</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navigation.map((item) => {
+              const Icon = item.icon
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive(item.href)
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              )
+            })}
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden py-4 border-t">
+            {navigation.map((item) => {
+              const Icon = item.icon
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium ${
+                    isActive(item.href)
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              )
+            })}
+          </nav>
+        )}
+      </div>
+    </header>
+  )
+}

@@ -1,132 +1,203 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { 
+  BookOpen, 
   Heart, 
-  Shield, 
-  Clock, 
-  Users, 
-  Phone, 
-  FileText 
-} from 'lucide-react';
+  Pill, 
+  Calculator, 
+  Bot, 
+  FileText,
+  ArrowRight,
+  Star,
+  Users,
+  Clock
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 
-const Landing = () => {
+export const Landing: React.FC = () => {
   const features = [
-    {
-      icon: <Heart className="w-8 h-8 text-white" />,
-      title: "Patient Care Management",
-      description: "Comprehensive patient tracking and care coordination tools"
+    { 
+      title: "650+ Study Cards", 
+      description: "Comprehensive flashcards across all EMS categories", 
+      icon: BookOpen,
+      color: "text-blue-600"
     },
-    {
-      icon: <Shield className="w-8 h-8 text-white" />,
-      title: "Secure Data Protection",
-      description: "HIPAA-compliant security ensuring patient data privacy"
+    { 
+      title: "Interactive Scenarios", 
+      description: "40+ real-world emergency training cases", 
+      icon: Heart,
+      color: "text-red-600"
     },
-    {
-      icon: <Clock className="w-8 h-8 text-white" />,
-      title: "Real-time Monitoring",
-      description: "24/7 patient monitoring with instant alerts and notifications"
+    { 
+      title: "Medication Reference", 
+      description: "Complete drug database with dosing information", 
+      icon: Pill,
+      color: "text-green-600"
     },
-    {
-      icon: <Users className="w-8 h-8 text-white" />,
-      title: "Team Collaboration",
-      description: "Seamless communication between medical staff and departments"
+    { 
+      title: "15 Medical Calculators", 
+      description: "Essential tools for field calculations", 
+      icon: Calculator,
+      color: "text-purple-600"
     },
-    {
-      icon: <Phone className="w-8 h-8 text-white" />,
-      title: "Emergency Response",
-      description: "Rapid emergency coordination and response management"
+    { 
+      title: "Protocol Assistant", 
+      description: "AI-powered protocol guidance with voice control", 
+      icon: Bot,
+      color: "text-orange-600"
     },
-    {
-      icon: <FileText className="w-8 h-8 text-white" />,
-      title: "Digital Documentation",
-      description: "Paperless medical records and automated reporting systems"
-    }
-  ];
+    { 
+      title: "Clark County Protocols", 
+      description: "Official EMS protocols for Las Vegas region", 
+      icon: FileText,
+      color: "text-indigo-600"
+    },
+  ]
 
-  const handleEnterSystem = () => {
-    // Replace this with your actual navigation logic
-    // Examples:
-    // navigate('/dashboard'); // for React Router
-    // window.location.href = '/dashboard'; // for direct navigation
-    // router.push('/dashboard'); // for Next.js
-    
-    alert('Welcome to ProMedix EMS! Replace this alert with your navigation logic.');
-  };
+  const stats = [
+    { number: '650+', label: 'Study Cards', icon: BookOpen },
+    { number: '15', label: 'Calculators', icon: Calculator },
+    { number: '40+', label: 'Scenarios', icon: Heart },
+    { number: '24/7', label: 'Access', icon: Clock },
+  ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-600 via-red-700 to-red-900">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="container mx-auto px-6 py-16">
-        <div className="text-center mb-16">
-          {/* Logo - Professional text-based placeholder */}
-          <div className="h-12 mb-8 flex justify-center">
-            <div className="bg-white/20 px-6 py-3 rounded-lg border border-white/30 backdrop-blur-sm">
-              <span className="text-white font-bold text-2xl tracking-wide">ProMedix EMS</span>
+      <section className="bg-gradient-to-br from-red-700 via-red-600 to-red-500 text-white">
+        <div className="container mx-auto px-4 py-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="flex justify-center mb-6">
+              <Heart className="h-16 w-16 text-white" />
             </div>
-          </div>
-          
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Emergency Medical
-            <br />
-            <span className="text-red-200">Management System</span>
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-red-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Advanced healthcare management platform designed for emergency medical services, 
-            hospitals, and healthcare facilities.
-          </p>
-          
-          {/* CTA Button */}
-          <button 
-            onClick={handleEnterSystem}
-            className="bg-white/20 hover:bg-white/30 text-white font-semibold py-4 px-10 rounded-lg border border-white/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm text-lg"
-          >
-            Enter ProMedix EMS
-          </button>
-        </div>
+            
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
+              ProMedix EMS
+            </h1>
+            
+            <div className="text-xl mb-4 opacity-90">© 2025 ProMedix EMS</div>
+            
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6">
+              Professional Emergency Medical Services Training
+            </h2>
+            
+            <p className="text-lg md:text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+              ProMedix EMS is a comprehensive training platform for EMT, AEMT, and Paramedic certification levels.
+              Features interactive scenarios, medication references, Clark County protocols, and advanced study tools.
+            </p>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
-            >
-              <div className="flex items-center mb-4">
-                <div className="bg-red-500/30 p-3 rounded-lg mr-4">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-              </div>
-              <p className="text-red-100 leading-relaxed">{feature.description}</p>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon
+                return (
+                  <div key={index} className="text-center">
+                    <Icon className="h-8 w-8 mx-auto mb-2 opacity-90" />
+                    <div className="text-3xl font-bold">{stat.number}</div>
+                    <div className="text-sm opacity-80">{stat.label}</div>
+                  </div>
+                )
+              })}
             </div>
-          ))}
-        </div>
-
-        {/* Bottom Section */}
-        <div className="text-center mt-16">
-          <p className="text-red-200 text-lg">
-            Trusted by healthcare professionals worldwide
-          </p>
-          <div className="mt-8 flex justify-center space-x-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-red-200">Support</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">99.9%</div>
-              <div className="text-red-200">Uptime</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">HIPAA</div>
-              <div className="text-red-200">Compliant</div>
-            </div>
+            
+            <Button asChild size="lg" className="bg-white text-red-700 hover:bg-red-50 text-lg px-8 py-3">
+              <Link to="/dashboard">
+                Enter ProMedix EMS
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need for EMS Excellence
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive tools and resources designed specifically for emergency medical professionals
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="bg-gray-100 p-3 rounded-lg mr-4">
+                        <Icon className={`h-6 w-6 ${feature.color}`} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                    </div>
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-red-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Advance Your EMS Career?
+          </h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Join thousands of EMS professionals who trust ProMedix for their training and certification needs.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-white text-red-600 hover:bg-red-50">
+              <Link to="/dashboard">
+                Start Training Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-red-600">
+              <Link to="/calculators">
+                Try Calculators
+              </Link>
+            </Button>
+          </div>
+          
+          <div className="mt-12 flex items-center justify-center space-x-8 text-sm opacity-80">
+            <div className="flex items-center">
+              <Star className="h-4 w-4 mr-1 text-yellow-400" />
+              <span>Professional Grade</span>
+            </div>
+            <div className="flex items-center">
+              <Users className="h-4 w-4 mr-1" />
+              <span>Trusted by 1000+ EMTs</span>
+            </div>
+            <div className="flex items-center">
+              <Clock className="h-4 w-4 mr-1" />
+              <span>24/7 Access</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center mb-4">
+            <Heart className="h-6 w-6 text-red-500 mr-2" />
+            <span className="text-lg font-semibold">ProMedix EMS</span>
+          </div>
+          <p className="text-gray-400 text-sm">
+            © 2025 ProMedix EMS. Professional Emergency Medical Services Training Platform.
+          </p>
+        </div>
+      </footer>
     </div>
-  );
-};
-
-export default Landing;
+  )
+}
