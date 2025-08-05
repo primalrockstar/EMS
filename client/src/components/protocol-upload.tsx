@@ -133,7 +133,7 @@ export default function ProtocolUpload({ open, onOpenChange }: ProtocolUploadPro
           <div
             {...getRootProps()}
             className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-              isDragActive ? 'border-primary bg-primary/5' : 'border-border hover:border-primary'
+              isDragActive ? 'border-primary bg-primary/5' : 'border-gray-300 hover:border-primary'
             }`}
           >
             <input {...getInputProps()} />

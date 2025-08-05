@@ -114,7 +114,7 @@ export default function Dashboard() {
             {/* Mode Selection */}
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium text-foreground">Mode:</span>
-              <div className="flex rounded-xl p-1.5 bg-muted/50 backdrop-blur-sm border border-border/50">
+              <div className="flex rounded-xl p-1.5 bg-muted/50 backdrop-blur-sm border border-gray-200/50">
                 <Button
                   variant={isBasic ? "default" : "ghost"}
                   size="sm"
