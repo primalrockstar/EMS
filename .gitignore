@@ -1,37 +1,21 @@
-# Node & package managers
+# Dependencies
 node_modules/
-.pnpm-store/
-.npm/
-.yarn/
+*/node_modules/
 
 # Build outputs
 dist/
 build/
-.next/
-.nuxt/
-.vuepress/dist/
+*/dist/
+*/build/
 
-# TypeScript cache
-*.tsbuildinfo
-
-# IDE/editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -44,21 +28,24 @@ pids
 *.seed
 *.pid.lock
 
-# Coverage
+# Coverage directory used by tools like istanbul
 coverage/
 *.lcov
+
+# NYC test coverage
+.nyc_output
+
+# Compiled binary addons
+build/Release
 
 # Dependency directories
 jspm_packages/
 
-# Optional npm cache
+# Optional npm cache directory
 .npm
 
 # Optional eslint cache
 .eslintcache
-
-# Optional stylelint cache
-.stylelintcache
 
 # Microbundle cache
 .rpt2_cache/
@@ -66,7 +53,7 @@ jspm_packages/
 .rts2_cache_es/
 .rts2_cache_umd/
 
-# REPL history
+# Optional REPL history
 .node_repl_history
 
 # Output of 'npm pack'
@@ -75,74 +62,55 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv
-.env
-.env.local
-.env.production
-.env.development
-.env.test
-
-# parcel
+# parcel-bundler cache
 .cache
 .parcel-cache
 
-# Next.js
+# Next.js build output
 .next
 
-# Nuxt.js
+# Nuxt.js build / generate output
 .nuxt
-dist
 
-# Gatsby
-.cache/
-#/public   # <--- Only uncomment if you want to ignore ONLY the root public folder. Do NOT use just "public".
+# Vite build cache
+.vite
 
-# Storybook
-.out
-.storybook-out
+# Rollup cache
+.rollup.cache
 
-# Temp folders
-tmp/
-temp/
+# Serverless directories
+.serverless/
 
-# DB
-*.db
-*.sqlite
+# FuseBox cache
+.fusebox/
 
-# Uploads
-uploads/
+# DynamoDB Local files
+.dynamodb/
 
-# Replit
-.replit
-replit.nix
+# TernJS port file
+.tern-port
 
-# Backups
-*.bak
-*.backup
-
-# Archives
-*.zip
-*.tar.gz
-*.rar
-
-# Editor stuff
+# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Netlify
-.netlify
+# OS generated files
+Thumbs.db
 
-# Vercel
-.vercel
+# Temporary files
+*.tmp
+*.temp
 
-# Sentry
-.sentryclirc
-.vercel
+# Database
+*.db
+*.sqlite
 
-# Do not ignore public folders in subdirectories like client/public!
+# Uploads directory
+uploads/

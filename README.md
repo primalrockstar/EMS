@@ -2,169 +2,162 @@
 
 A comprehensive Emergency Medical Services (EMS) educational and professional platform built with React, TypeScript, and Node.js. Designed for both EMS students and field professionals with Clark County, Nevada EMS protocol integration.
 
-## 🚀 Features
+## 🚀 Live Demo
 
-- **Protocol Management**: Upload, store, and access EMS protocols (PDF, DOCX, JSON)
-- **Medical Calculators**: 15 comprehensive calculators (APGAR, pediatric dosing, IV drip rates, etc.)
-- **Medication Reference**: 38 emergency medications with dosing and contraindications
-- **Educational Modules**: Structured learning content for EMS students
-- **Clark County EMS Protocols**: Complete protocol integration
-- **Voice Control**: Speech recognition for hands-free operation
-- **Mobile-First Design**: Optimized for mobile devices and field use
-- **Role-Based Access**: Different content for Basic (students) and Pro (professionals)
+- **Development**: [http://localhost:5173](http://localhost:5173)
+- **Production Build**: [http://localhost:4173](http://localhost:4173)
 
-## 🛠️ Tech Stack
+## 🛠️ Quick Start
 
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for build tooling
-- **Tailwind CSS** for styling
-- **Radix UI** components with shadcn/ui
-- **Wouter** for routing
-- **TanStack Query** for state management
+### Local Development
 
-### Backend
-- **Node.js** with Express.js
-- **TypeScript** with ESM modules
-- **PostgreSQL** with Drizzle ORM
-- **Neon Database** (serverless PostgreSQL)
-- **Multer** for file uploads
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd NewEMSAPP
 
-## 📦 Installation
+# Install dependencies for client
+cd client
+npm install
 
-1. Clone the repository:
+# Start development server
+npm run dev
+```
+
+### Production Build
+
+```bash
+# Build for production
+cd client
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 🌐 GitHub Deployment Options
+
+### Option 1: GitHub Pages (Static Hosting)
+
+1. **Build the app**:
    ```bash
-   git clone <repository-url>
-   cd promedix-ems
+   cd client && npm run build
    ```
 
-2. Install dependencies:
-   ```bash
-   npm install
+2. **Configure for GitHub Pages** in `vite.config.mjs`:
+   ```js
+   export default defineConfig({
+     plugins: [react()],
+     base: '/your-repo-name/',  // Add this line
+   })
    ```
 
-3. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   ```
-   Fill in your database connection details and other required environment variables.
+3. **Deploy to GitHub Pages**:
+   - Go to Repository Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `main` / `docs` or `gh-pages`
+   - Folder: `/client/dist`
 
-4. Set up the database:
-   ```bash
-   npm run db:push
-   npm run db:seed
-   ```
+### Option 2: Vercel (Recommended)
 
-5. Start the development server:
-   ```bash
-   npm run dev
-   ```
+1. **Connect your GitHub repo to Vercel**
+2. **Configure build settings**:
+   - Framework: Vite
+   - Build Command: `cd client && npm run build`
+   - Output Directory: `client/dist`
+   - Install Command: `cd client && npm install`
 
-## 🌐 Deployment
+### Option 3: Netlify
 
-### Vercel Deployment (Recommended)
+1. **Connect GitHub repo to Netlify**
+2. **Build settings**:
+   - Build command: `cd client && npm run build`
+   - Publish directory: `client/dist`
 
-1. **Prepare the build**:
-   ```bash
-   npm run build
-   ```
+### Option 4: Railway (Full-Stack)
 
-2. **Deploy to Vercel**:
-   - Connect your GitHub repository to Vercel
-   - Set environment variables in Vercel dashboard
-   - Deploy using the included `vercel.json` configuration
-
-3. **Environment Variables**:
-   - `DATABASE_URL`: PostgreSQL connection string
-   - `NODE_ENV`: Set to "production"
-   - Any other custom environment variables
-
-### Manual Deployment
-
-1. **Build the application**:
-   ```bash
-   npm run build
+1. **Add Railway config** in `railway.toml`:
+   ```toml
+   [build]
+   builder = "NIXPACKS"
+   
+   [deploy]
+   startCommand = "npm start"
+   
+   [env]
+   NODE_ENV = "production"
    ```
 
-2. **Start the production server**:
-   ```bash
-   npm start
-   ```
+## 🔧 Environment Variables
 
-## 📁 Project Structure
+Create `.env` file in root directory:
+
+```bash
+# Database (optional - uses mock data if not provided)
+DATABASE_URL="postgresql://username:password@host:port/database"
+
+# Environment
+NODE_ENV=production
+
+# Port (optional)
+PORT=3001
+```
+
+## 📦 Project Structure
 
 ```
-promedix-ems/
+NewEMSAPP/
 ├── client/                 # Frontend React application
 │   ├── src/
 │   │   ├── components/     # Reusable components
 │   │   ├── pages/          # Page components
 │   │   ├── hooks/          # Custom React hooks
 │   │   ├── lib/            # Utility functions
-│   │   └── data/           # Static data
-├── server/                 # Backend Express application
-│   ├── index.ts           # Server entry point
-│   ├── routes.ts          # API routes
-│   ├── db.ts              # Database connection
-│   └── storage.ts         # Database operations
+│   │   └── App.tsx         # Main app component
+│   ├── dist/              # Built files (after npm run build)
+│   └── package.json       # Client dependencies
+├── server/                 # Backend Express application (optional)
 ├── shared/                 # Shared types and schemas
-└── uploads/               # File uploads directory
+├── simple-server.js       # Simple production server
+└── package.json           # Root dependencies
 ```
 
-## 🔧 Available Scripts
+## 🏥 Features
 
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
-- `npm start`: Start production server
-- `npm run db:push`: Push database schema
-- `npm run db:seed`: Seed database with sample data
-- `npm run type-check`: Run TypeScript type checking
-- `npm run lint`: Run ESLint
+- **Protocol Management**: Upload, store, and access EMS protocols
+- **Medical Calculators**: 15+ comprehensive calculators (APGAR, BMI, etc.)
+- **Medication Reference**: Emergency medications with dosing info
+- **Educational Modules**: Structured learning for EMS students
+- **Clark County EMS Protocols**: Complete protocol integration
+- **Voice Control Ready**: Speech recognition for hands-free operation
+- **Mobile-First Design**: Optimized for tablets and mobile devices
+- **Role-Based Access**: Basic (students) vs Pro (professionals)
+
+## 🚀 Technologies
+
+- **Frontend**: React 18, TypeScript, Vite, Tailwind CSS
+- **UI Components**: Radix UI with shadcn/ui
+- **State Management**: TanStack Query
+- **Routing**: React Router DOM
+- **Styling**: Tailwind CSS with custom medical theme
 
 ## 📱 Mobile Support
 
-The application is built mobile-first with:
-- Responsive design optimized for mobile devices
+- Responsive design optimized for mobile/tablet use
+- Touch-friendly interface for field operations
 - Bottom navigation for easy thumb access
-- Touch-friendly interface elements
 - Progressive Web App capabilities
 
-## 🏥 EMS Features
-
-### For Students (Basic Tier)
-- Educational modules and study notes
-- Basic medical calculators
-- Protocol reference
-- Learning progress tracking
-
-### For Professionals (Pro Tier)
-- Advanced medical calculators
-- Field protocol access
-- Voice control for hands-free operation
-- Real-time alerts and updates
-
-## 📊 Database Schema
-
-The application uses PostgreSQL with the following main tables:
-- `users`: User profiles and authentication
-- `protocols`: EMS protocols with metadata
-- `medications`: Drug reference database
-- `learning_modules`: Educational content
-- `study_notes`: Chapter-based study materials
-- `flashcards`: Learning flashcards
-- `nremt_questions`: Practice exam questions
-
-## 🔐 Security
+## 🔐 Security Features
 
 - Input validation with Zod schemas
-- Parameterized database queries
-- File upload restrictions
 - CORS configuration
 - Environment-based configuration
+- Secure file upload handling
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License - Built for the EMS community
 
 ## 👨‍⚕️ Creator
 
@@ -174,4 +167,4 @@ Las Vegas, Nevada
 
 ---
 
-Built with ❤️ for the EMS community
+Built with ❤️ for Emergency Medical Services professionals and students
