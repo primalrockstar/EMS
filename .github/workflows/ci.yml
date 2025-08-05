@@ -64,6 +64,11 @@ jobs:
     - name: Build for preview
       run: npm run build
       
-    - name: Deploy to preview (placeholder)
-      run: echo "Deploy preview build here"
-      # Add your preview deployment steps here
+    - name: Deploy preview to Vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-org-id: ${{ secrets.ORG_ID }}
+        vercel-project-id: ${{ secrets.PROJECT_ID }}
+        working-directory: ./
+        github-comment: true
