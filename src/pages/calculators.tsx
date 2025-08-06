@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calculator, Baby, Weight, Droplets, Brain, Heart, Flame, Clock } from "lucide-react";
+import { Calculator, Baby, Weight, Droplets, Brain, Heart, Flame, Clock, Activity, Zap, Stethoscope, AlertTriangle } from "lucide-react";
 import ApgarCalculator from "@/components/apgar-calculator";
 import PediatricDoseCalculator from "@/components/pediatric-dose-calculator";
 import IVDripCalculator from "@/components/iv-drip-calculator";
@@ -10,6 +10,13 @@ import CardiacOutputCalculator from "@/components/cardiac-output-calculator";
 import BurnSurfaceCalculator from "@/components/burn-surface-calculator";
 import OxygenTankCalculator from "@/components/oxygen-tank-calculator";
 import BMICalculator from "@/components/bmi-calculator";
+import AnionGapCalculator from "@/components/anion-gap-calculator";
+import MapCalculator from "@/components/map-calculator";
+import MinuteVentilationCalculator from "@/components/minute-ventilation-calculator";
+import ParklandFormulaCalculator from "@/components/parkland-formula-calculator";
+import PediatricWeightEstimator from "@/components/pediatric-weight-estimator";
+import ShockIndexCalculator from "@/components/shock-index-calculator";
+import StrokeScaleCalculator from "@/components/stroke-scale-calculator";
 
 export default function Calculators() {
   const [showApgar, setShowApgar] = useState(false);
@@ -20,6 +27,13 @@ export default function Calculators() {
   const [showBurnSurface, setShowBurnSurface] = useState(false);
   const [showOxygenTank, setShowOxygenTank] = useState(false);
   const [showBMI, setShowBMI] = useState(false);
+  const [showAnionGap, setShowAnionGap] = useState(false);
+  const [showMAP, setShowMAP] = useState(false);
+  const [showMinuteVentilation, setShowMinuteVentilation] = useState(false);
+  const [showParklandFormula, setShowParklandFormula] = useState(false);
+  const [showPediatricWeight, setShowPediatricWeight] = useState(false);
+  const [showShockIndex, setShowShockIndex] = useState(false);
+  const [showStrokeScale, setShowStrokeScale] = useState(false);
 
   const calculators = [
     {
@@ -78,6 +92,55 @@ export default function Calculators() {
       color: "bg-pink-500",
       onClick: () => setShowBMI(true),
     },
+    {
+      name: "Anion Gap",
+      description: "Electrolyte balance assessment",
+      icon: Droplets,
+      color: "bg-teal-500",
+      onClick: () => setShowAnionGap(true),
+    },
+    {
+      name: "Mean Arterial Pressure",
+      description: "MAP calculation and assessment",
+      icon: Activity,
+      color: "bg-cyan-500",
+      onClick: () => setShowMAP(true),
+    },
+    {
+      name: "Minute Ventilation",
+      description: "Respiratory volume calculations",
+      icon: Activity,
+      color: "bg-emerald-500",
+      onClick: () => setShowMinuteVentilation(true),
+    },
+    {
+      name: "Parkland Formula",
+      description: "Burn fluid resuscitation",
+      icon: Flame,
+      color: "bg-amber-500",
+      onClick: () => setShowParklandFormula(true),
+    },
+    {
+      name: "Pediatric Weight Estimator",
+      description: "Age-based weight estimation",
+      icon: Baby,
+      color: "bg-sky-500",
+      onClick: () => setShowPediatricWeight(true),
+    },
+    {
+      name: "Shock Index",
+      description: "Hemodynamic assessment",
+      icon: Zap,
+      color: "bg-rose-500",
+      onClick: () => setShowShockIndex(true),
+    },
+    {
+      name: "Stroke Scale",
+      description: "Neurological stroke assessment",
+      icon: Brain,
+      color: "bg-violet-500",
+      onClick: () => setShowStrokeScale(true),
+    },
   ];
 
   return (
@@ -132,6 +195,13 @@ export default function Calculators() {
       <BurnSurfaceCalculator open={showBurnSurface} onOpenChange={setShowBurnSurface} />
       <OxygenTankCalculator open={showOxygenTank} onOpenChange={setShowOxygenTank} />
       <BMICalculator open={showBMI} onOpenChange={setShowBMI} />
+      <AnionGapCalculator open={showAnionGap} onOpenChange={setShowAnionGap} />
+      <MapCalculator open={showMAP} onOpenChange={setShowMAP} />
+      <MinuteVentilationCalculator open={showMinuteVentilation} onOpenChange={setShowMinuteVentilation} />
+      <ParklandFormulaCalculator open={showParklandFormula} onOpenChange={setShowParklandFormula} />
+      <PediatricWeightEstimator open={showPediatricWeight} onOpenChange={setShowPediatricWeight} />
+      <ShockIndexCalculator open={showShockIndex} onOpenChange={setShowShockIndex} />
+      <StrokeScaleCalculator open={showStrokeScale} onOpenChange={setShowStrokeScale} />
     </div>
   );
 }
