@@ -21,7 +21,7 @@ import { CalculatorsPage } from './pages/CalculatorsPage'
 import { MedicationsPage } from './pages/MedicationsPage'
 import { MorePage } from './pages/MorePage'
 
-function App() {
+export default function App() {
   const [userTier, setUserTier] = useState<'basic' | 'pro'>('basic')
   const [darkMode, setDarkMode] = useState(false)
   const [voiceActive, setVoiceActive] = useState(false)
@@ -167,5 +167,3 @@ function App() {
     </div>
   )
 }
-
-export default App
