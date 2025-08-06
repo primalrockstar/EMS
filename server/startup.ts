@@ -4,6 +4,7 @@
  */
 
 import { db } from "./db";
+import { seedAllStudyNotes } from './seed-recovered-study-notes';
 
 /**
  * Initialize database connection and verify it's working
