@@ -50,7 +50,7 @@ const StartTriage: React.FC = () => {
   return (
     <Box sx={{ maxWidth: 800, mx: 'auto' }}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -143,7 +143,7 @@ const StartTriage: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -183,7 +183,7 @@ const StartTriage: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -191,7 +191,7 @@ const StartTriage: React.FC = () => {
               </Typography>
 
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <Paper elevation={1} sx={{ p: 2, bgcolor: 'error.50' }}>
                     <Chip label="RED" color="error" sx={{ mb: 1 }} />
                     <Typography variant="h6" color="error.dark">
@@ -202,7 +202,7 @@ const StartTriage: React.FC = () => {
                     </Typography>
                   </Paper>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <Paper elevation={1} sx={{ p: 2, bgcolor: 'warning.50' }}>
                     <Chip label="YELLOW" color="warning" sx={{ mb: 1 }} />
                     <Typography variant="h6" color="warning.dark">
@@ -213,7 +213,7 @@ const StartTriage: React.FC = () => {
                     </Typography>
                   </Paper>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <Paper elevation={1} sx={{ p: 2, bgcolor: 'success.50' }}>
                     <Chip label="GREEN" color="success" sx={{ mb: 1 }} />
                     <Typography variant="h6" color="success.dark">
@@ -224,7 +224,7 @@ const StartTriage: React.FC = () => {
                     </Typography>
                   </Paper>
                 </Grid>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <Paper elevation={1} sx={{ p: 2, bgcolor: 'grey.200' }}>
                     <Chip label="BLACK" sx={{ mb: 1 }} />
                     <Typography variant="h6">

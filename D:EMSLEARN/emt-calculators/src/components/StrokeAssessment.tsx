@@ -73,7 +73,7 @@ const StrokeAssessment: React.FC = () => {
     <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* FAST Assessment */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -171,7 +171,7 @@ const StrokeAssessment: React.FC = () => {
         </Grid>
 
         {/* Results */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -226,7 +226,7 @@ const StrokeAssessment: React.FC = () => {
         </Grid>
 
         {/* Stroke Signs Reference */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -234,7 +234,7 @@ const StrokeAssessment: React.FC = () => {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Paper elevation={1} sx={{ p: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
                       Classic Stroke Symptoms:
@@ -247,7 +247,7 @@ const StrokeAssessment: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <Paper elevation={1} sx={{ p: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
                       Time-Critical Considerations:

@@ -135,7 +135,7 @@ const OralGlucose: React.FC = () => {
     <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Input Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -196,7 +196,7 @@ const OralGlucose: React.FC = () => {
         </Grid>
 
         {/* Guidelines Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -240,7 +240,7 @@ const OralGlucose: React.FC = () => {
         </Grid>
 
         {/* Reference Ranges */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -248,7 +248,7 @@ const OralGlucose: React.FC = () => {
               </Typography>
 
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                   <Paper 
                     elevation={1} 
                     sx={{ p: 2, bgcolor: 'error.50', border: '1px solid', borderColor: 'error.200' }}
@@ -266,7 +266,7 @@ const OralGlucose: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                   <Paper 
                     elevation={1} 
                     sx={{ p: 2, bgcolor: 'warning.50', border: '1px solid', borderColor: 'warning.200' }}
@@ -284,7 +284,7 @@ const OralGlucose: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                   <Paper 
                     elevation={1} 
                     sx={{ p: 2, bgcolor: 'success.50', border: '1px solid', borderColor: 'success.200' }}
@@ -302,7 +302,7 @@ const OralGlucose: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                   <Paper 
                     elevation={1} 
                     sx={{ p: 2, bgcolor: 'info.50', border: '1px solid', borderColor: 'info.200' }}
@@ -320,7 +320,7 @@ const OralGlucose: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} sm={6} md={2.4}>
+                <Grid size={{ xs: 12, sm: 6, md: 2.4 }}>
                   <Paper 
                     elevation={1} 
                     sx={{ p: 2, bgcolor: 'warning.50', border: '1px solid', borderColor: 'warning.200' }}

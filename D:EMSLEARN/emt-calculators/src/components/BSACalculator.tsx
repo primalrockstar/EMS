@@ -93,7 +93,7 @@ const BSACalculator: React.FC = () => {
     <Box sx={{ maxWidth: 800, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Input Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -181,7 +181,7 @@ const BSACalculator: React.FC = () => {
         </Grid>
 
         {/* Information Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -214,7 +214,7 @@ const BSACalculator: React.FC = () => {
         </Grid>
 
         {/* Formula Information */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -223,7 +223,7 @@ const BSACalculator: React.FC = () => {
 
               <Grid container spacing={2}>
                 {getFormulas().map((f) => (
-                  <Grid item xs={12} md={4} key={f.value}>
+                  <Grid size={{ xs: 12, md: 4 }} key={f.value}>
                     <Paper 
                       elevation={1} 
                       sx={{ 

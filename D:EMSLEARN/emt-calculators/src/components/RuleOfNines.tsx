@@ -94,7 +94,7 @@ const RuleOfNines: React.FC = () => {
     <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Controls */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
@@ -165,7 +165,7 @@ const RuleOfNines: React.FC = () => {
 
         {/* Body Area Selection */}
         {!useManualEntry && (
-          <Grid item xs={12} md={8}>
+          <Grid size={{ xs: 12, md: 8 }}>
             <Card elevation={3}>
               <CardContent>
                 <Typography variant="h6" gutterBottom>
@@ -173,7 +173,7 @@ const RuleOfNines: React.FC = () => {
                 </Typography>
                 <Grid container spacing={2}>
                   {bodyAreas.map((area, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={area.name}>
+                    <Grid size={{ xs: 12, sm: 6, md: 4 }} key={area.name}>
                       <Paper
                         elevation={area.selected ? 3 : 1}
                         sx={{
@@ -207,7 +207,7 @@ const RuleOfNines: React.FC = () => {
         )}
 
         {/* Results */}
-        <Grid item xs={12} md={useManualEntry ? 12 : 4}>
+        <Grid size={{ xs: 12, md: useManualEntry ? 12 : 4 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -243,7 +243,7 @@ const RuleOfNines: React.FC = () => {
         </Grid>
 
         {/* Reference Table */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>

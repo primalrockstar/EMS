@@ -104,7 +104,7 @@ const EpinephrineCalculator: React.FC = () => {
     <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Input Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -181,7 +181,7 @@ const EpinephrineCalculator: React.FC = () => {
         </Grid>
 
         {/* Results Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -237,7 +237,7 @@ const EpinephrineCalculator: React.FC = () => {
         </Grid>
 
         {/* Reference Table */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>

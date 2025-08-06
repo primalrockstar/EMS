@@ -110,7 +110,7 @@ const ApgarScore: React.FC = () => {
     <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Assessment Form */}
-        <Grid item xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 8 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -159,7 +159,7 @@ const ApgarScore: React.FC = () => {
         </Grid>
 
         {/* Results */}
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -207,7 +207,7 @@ const ApgarScore: React.FC = () => {
         </Grid>
 
         {/* Reference Table */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -263,7 +263,7 @@ const ApgarScore: React.FC = () => {
         </Grid>
 
         {/* Clinical Guidance */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -271,7 +271,7 @@ const ApgarScore: React.FC = () => {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   <Paper elevation={1} sx={{ p: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
                       Timing:
@@ -284,7 +284,7 @@ const ApgarScore: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   <Paper elevation={1} sx={{ p: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
                       Actions by Score:
@@ -304,7 +304,7 @@ const ApgarScore: React.FC = () => {
                   </Paper>
                 </Grid>
 
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   <Paper elevation={1} sx={{ p: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
                       Important Notes:

@@ -72,7 +72,7 @@ const FluidResuscitation: React.FC = () => {
 
       <Grid container spacing={3}>
         {/* Input Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -136,7 +136,7 @@ const FluidResuscitation: React.FC = () => {
         </Grid>
 
         {/* Results Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -191,7 +191,7 @@ const FluidResuscitation: React.FC = () => {
         </Grid>
 
         {/* Educational Notes */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>

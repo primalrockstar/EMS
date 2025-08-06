@@ -84,7 +84,7 @@ const ActivatedCharcoal: React.FC = () => {
     <Box sx={{ maxWidth: 1000, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Input Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -177,7 +177,7 @@ const ActivatedCharcoal: React.FC = () => {
         </Grid>
 
         {/* Guidelines Section */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -225,7 +225,7 @@ const ActivatedCharcoal: React.FC = () => {
         </Grid>
 
         {/* Reference Information */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -238,7 +238,7 @@ const ActivatedCharcoal: React.FC = () => {
                 </Typography>
                 <Grid container spacing={1}>
                   {getNonBindingSubstances().map((substance, index) => (
-                    <Grid item key={index}>
+                    <Grid key={index}>
                       <Chip 
                         label={substance} 
                         size="small" 

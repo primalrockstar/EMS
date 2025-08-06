@@ -65,7 +65,7 @@ const WeightConverter: React.FC = () => {
     <Box sx={{ maxWidth: 800, mx: 'auto' }}>
       <Grid container spacing={3}>
         {/* Converter */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -110,7 +110,7 @@ const WeightConverter: React.FC = () => {
         </Grid>
 
         {/* Common Adult Weights */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -140,7 +140,7 @@ const WeightConverter: React.FC = () => {
         </Grid>
 
         {/* Pediatric Reference */}
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <Card elevation={3}>
             <CardContent>
               <Typography variant="h6" gutterBottom>

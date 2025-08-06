@@ -192,7 +192,7 @@ function App() {
 
   const selectedCalc = calculators.find(calc => calc.id === selectedCalculator);
 
-  const categories = [...new Set(calculators.map(calc => calc.category))];
+  const categories = Array.from(new Set(calculators.map(calc => calc.category)));
 
   return (
     <ThemeProvider theme={theme}>
@@ -227,7 +227,7 @@ function App() {
                   {calculators
                     .filter(calc => calc.category === category)
                     .map((calculator) => (
-                      <Grid item xs={12} sm={6} md={4} key={calculator.id}>
+                      <Grid size={{ xs: 12, sm: 6, md: 4 }} key={calculator.id}>
                         <Card 
                           sx={{ 
                             height: '100%', 
